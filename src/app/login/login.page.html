@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [formGroup]="formLogin">
+  <ion-item>
+    <ion-label position="floating">Correo electronico</ion-label>
+    <ion-input  class="input" formControlName="email"></ion-input>
+
+    <ion-text *ngIf="formLogin.controls.email.errors?.required && formLogin.controls.email.touched" class="error-text" color="danger">
+      <span>Ingresa tu correo electronico</span>
+    </ion-text>
+
+    <ion-text *ngIf="formLogin.controls.email.errors?.email && formLogin.controls.email.touched" class="error-text" color="danger">
+      <h6>Ingresa un correo valido</h6>
+    </ion-text>
+
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="password" formControlName="password"></ion-input>
+
+    <ion-text
+    *ngIf="formLogin.controls.password.errors?.required && formLogin.controls.password.touched" class="error-text" color="danger">
+      <span>Ingresa tu contraseña</span>
+    </ion-text>
+
+  </ion-item>
+
+  <ion-button
+  (click)="login()"
+  [disabled]="formLogin.invalid || loading"
+  class="login-button" shape="round"
+  expand="block">
+    Ingresar
+  </ion-button>
+
+
+</ion-content>
