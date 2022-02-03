@@ -30,4 +30,8 @@ export class HomePage {
     this.router.navigate(['/user',id]);
   }
 
+  goToCamera(){
+    this.router.navigate(['/camera']);
+  }
+
 }

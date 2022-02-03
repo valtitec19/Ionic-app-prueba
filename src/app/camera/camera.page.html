@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Camara</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button expand="block" (click)="openCamera()">
+    Take a picture
+  </ion-button>
+
+  <img [src]="imageData"/>
+
+</ion-content>
